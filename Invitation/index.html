@@ -140,13 +140,13 @@
             transform: scale(0.95);
         }
 
-        /* Modal Overlay - Frosted Glass Overlay Showing Background Animation */
+        /* Modal Overlay - Lower blur (5px) and lighter tint for background outside pop-up card */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(3, 7, 18, 0.55);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(3, 7, 18, 0.35);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -354,16 +354,15 @@
     </div>
 
     <script>
-        // High particle count for Mobile Phones (ph), lighter count for Desktop
+        // High particle count for Mobile Phones (ph): set to 320 for mobile, 120 for desktop
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
 
         let width, height;
         let stars = [];
         
-        // Dynamically checks screen size: higher star count for mobile screens (ph), lower for desktop
         const isMobile = window.innerWidth <= 768;
-        const numStars = isMobile ? 180 : 80;
+        const numStars = isMobile ? 320 : 120;
 
         function resize() {
             width = canvas.width = window.innerWidth;
@@ -386,7 +385,7 @@
             }
 
             update() {
-                this.z -= isMobile ? 2.2 : 1.6; // Slightly faster warp speed on mobile
+                this.z -= isMobile ? 2.5 : 1.8;
                 if (this.z <= 0) {
                     this.z = width;
                     this.x = (Math.random() - 0.5) * width * 2;
