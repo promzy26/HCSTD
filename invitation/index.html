@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Teachers' Day Invitation 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Deep Dark Theme Engine with Perfectly Balanced, Noticeable Animated Background */
+        :root {
+            --bg-color-1: #000000;
+            --bg-color-2: #030712;
+            --bg-color-3: #0a1128;
+            --card-bg: rgba(3, 7, 18, 0.78); /* Semi-transparent so the background animation is visible through it */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #60a5fa;
+            --border: rgba(30, 41, 59, 0.8);
+            --box-bg: rgba(15, 23, 42, 0.6);
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+            --orb-color: rgba(59, 130, 246, 0.25);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color-1: #000000;
+                --bg-color-2: #030712;
+                --bg-color-3: #0a1128;
+                --card-bg: rgba(3, 7, 18, 0.78);
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --accent: #60a5fa;
+                --border: rgba(30, 41, 59, 0.8);
+                --box-bg: rgba(15, 23, 42, 0.6);
+                --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+                --orb-color: rgba(59, 130, 246, 0.25);
+            }
+        }
+
+        @keyframes meshGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            /* Balanced 6-second animation loop: smooth, clearly noticeable, and not jarring */
+            background: linear-gradient(125deg, var(--bg-color-1), var(--bg-color-2), var(--bg-color-3), var(--bg-color-1));
+            background-size: 300% 300%;
+            animation: meshGradient 6s ease infinite;
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: env(safe-area-inset-top, 16px) env(safe-area-inset-right, 16px) env(safe-area-inset-bottom, 16px) env(safe-area-inset-left, 16px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ambient Glow */
+        .ambient-glow {
+            position: absolute;
+            width: 75vw;
+            height: 75vw;
+            max-width: 320px;
+            max-height: 320px;
+            background: var(--orb-color);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Main Landing View - Fluid Sizing */
+        .main-screen {
+            text-align: center;
+            color: #ffffff;
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 5vh;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .main-screen h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 8vw, 2.8rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2vh;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        .main-screen p {
+            font-size: clamp(0.85rem, 3.5vw, 1rem);
+            color: #94a3b8;
+            margin-bottom: 5vh;
+            line-height: 1.5;
+            padding: 0 5px;
+        }
+
+        .open-btn {
+            background: #1e293b;
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 240px;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s ease;
+        }
+
+        .open-btn:hover {
+            background: #334155;
+        }
+
+        .open-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Modal Overlay - Frosted Glass Overlay Showing Background Animation */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45); /* Adjusted darkness so the background mesh gradient animation shines through clearly */
+            backdrop-filter: blur(16px);       /* Enhanced blur effect on the popup background */
+            -webkit-backdrop-filter: blur(16px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Fluid Phone-Optimized Card */
+        .invitation-card {
+            background: var(--card-bg);
+            color: var(--text-main);
+            width: 100%;
+            max-width: 380px;
+            max-height: 90vh;
+            max-height: 90dvh;
+            padding: clamp(16px, 4vh, 24px) clamp(14px, 4vw, 20px);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transform: translateY(15px) scale(0.97);
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .modal-overlay.active .invitation-card {
+            transform: translateY(0) scale(1);
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--box-bg);
+            border: 1px solid var(--border);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 1rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: transform 0.1s ease;
+        }
+
+        .close-btn:active {
+            transform: scale(0.9);
+        }
+
+        /* Card Header Content */
+        .card-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.25rem, 5.2vw, 1.55rem);
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-main);
+            line-height: 1.2;
+            white-space: nowrap;
+            letter-spacing: -0.3px;
+        }
+
+        .card-header p {
+            color: var(--text-muted);
+            font-size: clamp(0.75rem, 3vw, 0.82rem);
+            line-height: 1.45;
+            margin-bottom: 12px;
+        }
+
+        /* Event Details Box */
+        .card-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: var(--box-bg);
+            padding: 10px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            margin-bottom: 10px;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 0.9rem;
+            background: #030712;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .detail-content strong {
+            font-size: 0.62rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: block;
+            margin-bottom: 1px;
+        }
+
+        .detail-content p {
+            font-size: clamp(0.78rem, 3.2vw, 0.85rem);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Informational Section */
+        .card-info {
+            background: var(--box-bg);
+            padding: 10px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .card-info h3 {
+            font-size: clamp(0.78rem, 3.2vw, 0.85rem);
+            font-weight: 700;
+            margin-bottom: 2px;
+            color: var(--text-main);
+        }
+
+        .card-info p {
+            font-size: clamp(0.7rem, 2.8vw, 0.76rem);
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-screen">
+        <div class="ambient-glow"></div>
+        <span class="badge">A Special Invitation from the Students</span>
+        <h1>Celebrating Our Teachers</h1>
+        <p>We’ve put together something special to show our appreciation. Open your card below!</p>
+        <button onclick="openInvitation()" class="open-btn">
+            <span>Open Invitation</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay" onclick="handleOutsideClick(event)">
+        <div class="invitation-card">
+            <button onclick="closeInvitation()" class="close-btn" aria-label="Close">&times;</button>
+
+            <div class="card-header">
+                <h2>Happy Teachers' Day!</h2>
+                <p>We cordially invite you to join us for a celebration dedicated entirely to thanking you for everything you do.</p>
+            </div>
+
+            <div class="card-details">
+                <div class="detail-row">
+                    <span class="icon">📅</span>
+                    <div class="detail-content">
+                        <strong>Date</strong>
+                        <p>September 5th, 2026</p>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <span class="icon">⏰</span>
+                    <div class="detail-content">
+                        <strong>Time</strong>
+                        <p>10:00 AM – 1:00 PM</p>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <span class="icon">📍</span>
+                    <div class="detail-content">
+                        <strong>Venue</strong>
+                        <p>Holy Crown School, Masimpur</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-info">
+                <h3>What to Expect</h3>
+                <p>Join us for fun student performances, heartfelt thank-yous, and a wonderful time celebrating your hard work and guidance.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openInvitation() {
+            document.getElementById("modal-overlay").classList.add("active");
+        }
+
+        function closeInvitation() {
+            document.getElementById("modal-overlay").classList.remove("active");
+        }
+
+        function handleOutsideClick(event) {
+            const overlay = document.getElementById("modal-overlay");
+            if (event.target === overlay) {
+                closeInvitation();
+            }
+        }
+    </script>
+</body>
+</html>
