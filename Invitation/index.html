@@ -1,446 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Teachers' Day Invitation 2026 | HCS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* Deep Dark Theme Engine with Original Colors (#000000, #030712, #0a1128, #60a5fa) */
-        :root {
-            --bg-color-1: #000000;
-            --bg-color-2: #030712;
-            --bg-color-3: #0a1128;
-            --card-bg: rgba(3, 7, 18, 0.78);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #60a5fa;
-            --border: rgba(30, 41, 59, 0.8);
-            --box-bg: rgba(15, 23, 42, 0.6);
-            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color-1: #000000;
-                --bg-color-2: #030712;
-                --bg-color-3: #0a1128;
-                --card-bg: rgba(3, 7, 18, 0.78);
-                --text-main: #f8fafc;
-                --text-muted: #94a3b8;
-                --accent: #60a5fa;
-                --border: rgba(30, 41, 59, 0.8);
-                --box-bg: rgba(15, 23, 42, 0.6);
-                --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
-            }
-        }
-
-        /* Canvas Background for Starfield Warp Animation */
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        body {
-            background: linear-gradient(125deg, var(--bg-color-1), var(--bg-color-2), var(--bg-color-3));
-            color: var(--text-main);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            min-height: 100vh;
-            min-height: 100dvh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: env(safe-area-inset-top, 16px) env(safe-area-inset-right, 16px) env(safe-area-inset-bottom, 16px) env(safe-area-inset-left, 16px);
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Main Landing View - Fluid Sizing */
-        .main-screen {
-            text-align: center;
-            color: #ffffff;
-            width: 100%;
-            max-width: 420px;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .badge {
-            background: rgba(96, 165, 250, 0.08);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: clamp(0.65rem, 2.5vw, 0.75rem);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: inline-block;
-            margin-bottom: 5vh;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        .main-screen h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 8vw, 2.8rem);
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 2vh;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-        }
-
-        .main-screen p {
-            font-size: clamp(0.85rem, 3.5vw, 1rem);
-            color: #94a3b8;
-            margin-bottom: 5vh;
-            line-height: 1.5;
-            padding: 0 5px;
-        }
-
-        .open-btn {
-            background: #1e293b;
-            color: #f8fafc;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 100%;
-            max-width: 240px;
-            padding: 14px 24px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s ease;
-        }
-
-        .open-btn:hover {
-            background: #334155;
-        }
-
-        .open-btn:active {
-            transform: scale(0.95);
-        }
-
-        /* Modal Overlay - Lower blur (5px) and lighter tint for background outside pop-up card */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(3, 7, 18, 0.35);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 12px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease;
-            z-index: 1000;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        /* Fluid Phone-Optimized Card */
-        .invitation-card {
-            background: var(--card-bg);
-            color: var(--text-main);
-            width: 100%;
-            max-width: 380px;
-            max-height: 90vh;
-            max-height: 90dvh;
-            padding: clamp(16px, 4vh, 24px) clamp(14px, 4vw, 20px);
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-            position: relative;
-            transform: translateY(15px) scale(0.97);
-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid var(--border);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .modal-overlay.active .invitation-card {
-            transform: translateY(0) scale(1);
-        }
-
-        /* Close Button */
-        .close-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: var(--box-bg);
-            border: 1px solid var(--border);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            font-size: 1rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-            transition: transform 0.1s ease;
-        }
-
-        .close-btn:active {
-            transform: scale(0.9);
-        }
-
-        /* Card Header Content */
-        .card-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.25rem, 5.2vw, 1.55rem);
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--text-main);
-            line-height: 1.2;
-            white-space: nowrap;
-            letter-spacing: -0.3px;
-        }
-
-        .card-header p {
-            color: var(--text-muted);
-            font-size: clamp(0.75rem, 3vw, 0.82rem);
-            line-height: 1.45;
-            margin-bottom: 12px;
-        }
-
-        /* Event Details Box */
-        .card-details {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            background: var(--box-bg);
-            padding: 10px;
-            border-radius: 14px;
-            border: 1px solid var(--border);
-            margin-bottom: 10px;
-        }
-
-        .detail-row {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .icon {
-            font-size: 0.9rem;
-            background: #030712;
-            width: 32px;
-            height: 32px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border);
-            flex-shrink: 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .detail-content strong {
-            font-size: 0.62rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            display: block;
-            margin-bottom: 1px;
-        }
-
-        .detail-content p {
-            font-size: clamp(0.78rem, 3.2vw, 0.85rem);
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        /* Informational Section */
-        .card-info {
-            background: var(--box-bg);
-            padding: 10px;
-            border-radius: 14px;
-            border: 1px solid var(--border);
-        }
-
-        .card-info h3 {
-            font-size: clamp(0.78rem, 3.2vw, 0.85rem);
-            font-weight: 700;
-            margin-bottom: 2px;
-            color: var(--accent);
-        }
-
-        .card-info p {
-            font-size: clamp(0.7rem, 2.8vw, 0.76rem);
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-    </style>
-</head>
-<body>
-
-    <canvas id="bgCanvas"></canvas>
-
-    <div class="main-screen">
-        <span class="badge">Invitation for Teacher’s Day</span>
-        <h1>Celebrating Our Teachers</h1>
-        <p>We’ve put together something special to show our appreciation. Open your card below!</p>
-        <button onclick="openInvitation()" class="open-btn">
-            <span>Open Invitation</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-    </div>
-
-    <div id="modal-overlay" class="modal-overlay" onclick="handleOutsideClick(event)">
-        <div class="invitation-card">
-            <button onclick="closeInvitation()" class="close-btn" aria-label="Close">&times;</button>
-
-            <div class="card-header">
-                <h2>Happy Teachers' Day!</h2>
-                <p>We cordially invite you to join us for a celebration dedicated entirely to thanking you for everything you do.</p>
-            </div>
-
-            <div class="card-details">
-                <div class="detail-row">
-                    <span class="icon">📅</span>
-                    <div class="detail-content">
-                        <strong>Date</strong>
-                        <p>September 5th, 2026</p>
-                    </div>
-                </div>
-                <div class="detail-row">
-                    <span class="icon">⏰</span>
-                    <div class="detail-content">
-                        <strong>Time</strong>
-                        <p>10:00 AM – 1:00 PM</p>
-                    </div>
-                </div>
-                <div class="detail-row">
-                    <span class="icon">📍</span>
-                    <div class="detail-content">
-                        <strong>Venue</strong>
-                        <p>Holy Crown School, Masimpur</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-info">
-                <h3>What to Expect</h3>
-                <p>Join us for fun student performances, heartfelt thank-yous, and a wonderful time celebrating your hard work and guidance.</p>
-            </div>
-        </div>
-    </div>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Day Celebration</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js CDN for lightweight interactive modal state -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
-        // High particle count for Mobile Phones (ph): set to 320 for mobile, 120 for desktop
-        const canvas = document.getElementById('bgCanvas');
-        const ctx = canvas.getContext('2d');
-
-        let width, height;
-        let stars = [];
-        
-        const isMobile = window.innerWidth <= 768;
-        const numStars = isMobile ? 320 : 120;
-
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-
-        window.addEventListener('resize', resize);
-        resize();
-
-        class Star {
-            constructor() {
-                this.reset();
-            }
-
-            reset() {
-                this.x = (Math.random() - 0.5) * width * 2;
-                this.y = (Math.random() - 0.5) * height * 2;
-                this.z = Math.random() * width;
-                this.size = Math.random() * 1.5 + 0.5;
-            }
-
-            update() {
-                this.z -= isMobile ? 2.5 : 1.8;
-                if (this.z <= 0) {
-                    this.z = width;
-                    this.x = (Math.random() - 0.5) * width * 2;
-                    this.y = (Math.random() - 0.5) * height * 2;
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        botanical: {
+                            50: '#f4f7f4',
+                            100: '#e2ece2',
+                            200: '#c5dac5',
+                            600: '#4a7c59',
+                            700: '#3a6245',
+                            950: '#1b2e21',
+                        }
+                    }
                 }
-            }
-
-            draw() {
-                let k = 250 / this.z;
-                let px = this.x * k + width / 2;
-                let py = this.y * k + height / 2;
-
-                if (px >= 0 && px <= width && py >= 0 && py <= height) {
-                    let pSize = Math.max(0.1, (1 - this.z / width) * 3 * this.size);
-                    let alpha = (1 - this.z / width);
-                    
-                    ctx.beginPath();
-                    ctx.arc(px, py, pSize, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(96, 165, 250, ${alpha})`;
-                    ctx.fill();
-                }
-            }
-        }
-
-        for (let i = 0; i < numStars; i++) {
-            stars.push(new Star());
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-
-            for (let i = 0; i < stars.length; i++) {
-                stars[i].update();
-                stars[i].draw();
-            }
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        function openInvitation() {
-            document.getElementById("modal-overlay").classList.add("active");
-        }
-
-        function closeInvitation() {
-            document.getElementById("modal-overlay").classList.remove("active");
-        }
-
-        function handleOutsideClick(event) {
-            const overlay = document.getElementById("modal-overlay");
-            if (event.target === overlay) {
-                closeInvitation();
             }
         }
     </script>
+    <style>
+        .botanical-bg {
+            background-color: #f7f9f6;
+            background-image: radial-gradient(#c5dac5 0.75px, transparent 0.75px), radial-gradient(#c5dac5 0.75px, #f7f9f6 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        .botanical-shadow {
+            box-shadow: 0 20px 40px -15px rgba(58, 98, 69, 0.15), 0 0 20px rgba(197, 218, 197, 0.3);
+        }
+    </style>
+</head>
+<body class="botanical-bg text-botanical-950 font-sans min-h-screen flex flex-col justify-between selection:bg-botanical-200 selection:text-botanical-950" x-data="{ openModal: false }">
+
+    <!-- Landing Hero Section -->
+    <main class="flex-grow flex items-center justify-center px-6 py-12 md:py-20 text-center">
+        <div class="max-w-2xl w-full space-y-8">
+            
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-botanical-100 border border-botanical-200 text-botanical-700 text-xs font-medium tracking-wider uppercase">
+                <span>🌿 Honoring Our Mentors & Guides</span>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-4xl md:text-6xl font-serif font-bold tracking-tight text-botanical-950 leading-tight">
+                    Celebrating Those Who <span class="text-botanical-600 italic">Shape Futures</span>
+                </h2>
+                <p class="text-botanical-700 text-sm md:text-base max-w-lg mx-auto font-light leading-relaxed">
+                    Your patience, wisdom, and dedication build the foundation of our entire institution. You are warmly invited to a special day dedicated entirely to celebrating you.
+                </p>
+            </div>
+
+            <!-- Trigger Button -->
+            <div class="pt-4">
+                <button @click="openModal = true" 
+                        class="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-botanical-600 text-white font-semibold text-base shadow-lg shadow-botanical-600/20 hover:bg-botanical-700 transition-all duration-300 transform hover:-translate-y-0.5">
+                    <span>View Official Invitation</span>
+                    <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- INVITATION POPUP MODAL -->
+    <div x-show="openModal" 
+         x-cloak
+         class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-botanical-950/40 backdrop-blur-sm overflow-y-auto"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
+
+        <!-- Modal Card Wrapper -->
+        <div @click.away="openModal = false"
+             class="relative max-w-lg w-full bg-white border-2 border-botanical-200 rounded-3xl p-6 sm:p-8 botanical-shadow text-center space-y-6 my-auto"
+             x-transition:enter="transition ease-out duration-300 transform"
+             x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+             x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-200 transform"
+             x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+             x-transition:leave-end="opacity-0 scale-95 translate-y-4">
+
+            <!-- Close Button -->
+            <button @click="openModal = false" class="absolute top-5 right-5 text-botanical-700 hover:text-botanical-950 p-2 rounded-full hover:bg-botanical-50 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- Card Header -->
+            <div class="space-y-1.5 pt-2">
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-botanical-950">Teacher's Day Celebration</h3>
+                <div class="w-16 h-0.5 bg-botanical-200 mx-auto mt-2.5"></div>
+            </div>
+
+            <!-- Respectful Faculty Message -->
+            <div class="space-y-2">
+                <p class="text-botanical-700 text-xs sm:text-sm italic font-serif">"The art of teaching is the art of assisting discovery."</p>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed px-2 font-light">
+                    The management and students cordially invite our esteemed educators to join us for a graceful morning filled with gratitude, appreciation, and joy.
+                </p>
+            </div>
+
+            <!-- Event Details Grid (Date, Time, & Venue Styled Uniformly) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 py-1 border-y border-botanical-100">
+                <div class="flex items-center space-x-3 p-3 rounded-xl bg-botanical-50 border border-botanical-100">
+                    <div class="w-9 h-9 rounded-lg bg-botanical-100 flex items-center justify-center text-botanical-700 shrink-0 text-sm">
+                        📅
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[10px] text-botanical-600 uppercase tracking-wide font-medium">Date</p>
+                        <p class="text-xs sm:text-sm font-semibold text-botanical-950">5th September</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3 p-3 rounded-xl bg-botanical-50 border border-botanical-100">
+                    <div class="w-9 h-9 rounded-lg bg-botanical-100 flex items-center justify-center text-botanical-700 shrink-0 text-sm">
+                        ⏰
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[10px] text-botanical-600 uppercase tracking-wide font-medium">Time</p>
+                        <p class="text-xs sm:text-sm font-semibold text-botanical-950">9:00 AM onwards</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3 p-3 rounded-xl bg-botanical-50 border border-botanical-100">
+                    <div class="w-9 h-9 rounded-lg bg-botanical-100 flex items-center justify-center text-botanical-700 shrink-0 text-sm">
+                        📍
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[10px] text-botanical-600 uppercase tracking-wide font-medium">Venue</p>
+                        <p class="text-xs sm:text-sm font-semibold text-botanical-950">HCS Masimpur Campus</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer Actions -->
+            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                <button onclick="window.print()" class="flex-1 py-3 px-4 rounded-xl bg-botanical-50 hover:bg-botanical-100 border border-botanical-200 text-botanical-950 text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-botanical-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                    </svg>
+                    <span>Save Invitation</span>
+                </button>
+                <button @click="openModal = false" class="py-3 px-6 rounded-xl bg-botanical-600 text-white font-semibold text-xs sm:text-sm hover:bg-botanical-700 transition-colors">
+                    Close Card
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 text-center text-xs text-botanical-700 border-t border-botanical-200/60 bg-white/70 backdrop-blur-md">
+        <p>© 2026 HCS Masimpur Campus. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
